@@ -1,0 +1,46 @@
+# title: Pyxel Experiment
+# author: Suzuki Takafumi
+# desc: A Pyxel Experiment
+# license: MIT
+# version: 0.1
+
+import pyxel
+
+
+class App:
+    def __init__(self):
+        # ウィンドウサイズの指定
+        pyxel.init(160, 120)
+        # リソースの読み込み
+        pyxel.load("assets/pyxel_experiment.pyxres")
+
+        self.player_x = 0
+        self.player_y = 0
+
+        pyxel.run(self.update, self.draw)
+
+    def update(self):
+        # キー入力の処理
+        if pyxel.btn(pyxel.KEY_RIGHT):
+            self.player_x += 1
+        if pyxel.btn(pyxel.KEY_LEFT):
+            self.player_x -= 1
+
+    def draw(self):
+        pyxel.cls(0)
+
+        # プレイヤーの矩形を描画
+        pyxel.blt(
+            self.player_x,
+            self.player_y,
+            0,
+            0,
+            0,
+            16,
+            16,
+            12,
+        )
+
+
+# Pyxelアプリケーションの開始
+app = App()
