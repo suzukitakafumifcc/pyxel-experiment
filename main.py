@@ -12,10 +12,10 @@ class App:
         # ウィンドウサイズの指定
         pyxel.init(160, 120)
         # リソースの読み込み
-        pyxel.load("assets/pyxel_experiment.pyxres")
+        pyxel.load("my_resource.pyxres")
 
-        self.player_x = 0
-        self.player_y = 0
+        self.player_x = 80
+        self.player_y = 50
 
         pyxel.run(self.update, self.draw)
 
@@ -29,16 +29,15 @@ class App:
     def draw(self):
         pyxel.cls(0)
 
-        # プレイヤーの矩形を描画
+        # プレイヤーを描画
         pyxel.blt(
             self.player_x,
             self.player_y,
             0,
             0,
             0,
-            16,
-            16,
-            12,
+            7,
+            7,
         )
 
 
